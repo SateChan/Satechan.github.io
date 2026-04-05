@@ -11,7 +11,7 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
 
 <Layout title={`搜索 | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="搜索" pageDesc="在只個地方搜索文章">
+  <Main pageTitle="搜索" pageDesc="在只地方搜索文章">
     <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
   </Main>
   <Footer />
@@ -32,7 +32,7 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
       // @ts-expect-error — Missing types for @pagefind/default-ui package.
       const { PagefindUI } = await import("@pagefind/default-ui");
 
-      // Display warning inn dev mode
+      // Display warning in dev mode
       if (import.meta.env.DEV) {
         pageFindSearch.innerHTML = `
             <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
@@ -47,6 +47,19 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
         element: "#pagefind-search",
         showImages: false,
         showSubResults: true,
+        translations: {
+          placeholder: "搜索...",
+          clear_search: "清除",
+          load_more: "加載更多結果",
+          search_label: "搜索",
+          filters_label: "過濾",
+          zero_results: "[SEARCH_TERM]搜索無結果",
+          many_results: "[SEARCH_TERM] 個搜索結果 [COUNT] 條",
+          one_result: "[SEARCH_TERM] 個搜索結果 1 條",
+          alt_search: "搜索唔著 [SEARCH_TERM]，改為搜索 [DIFFERENT_TERM]",
+          search_suggestion: "試下搜索以下內容",
+          searching: "正在搜索 [SEARCH_TERM]...",
+        },
         processTerm: function (term: string) {
           params.set("q", term);
           history.replaceState(history.state, "", "?" + params.toString());
@@ -58,11 +71,13 @@ const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
         },
       });
 
+      // If search param exists, trigger search
       const query = params.get("q");
       if (query) {
         search.triggerSearch(query);
       }
 
+      // Reset search param if search input is cleared
       const searchInput = document.querySelector(".pagefind-ui__search-input");
       const clearButton = document.querySelector(".pagefind-ui__search-clear");
       searchInput?.addEventListener("input", resetSearchParam);

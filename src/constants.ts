@@ -68,13 +68,13 @@ export const SHARE_LINKS: Social[] = [
   {
     name: "微信",
     href: "javascript:alert('請複製網頁連結後，在微信中貼上分享給好友')", 
-    linkTitle: `來去微信中分享`,
+    linkTitle: `來去微信分享`,
     icon: IconWechat,
   },
   {
     name: "QQ",
     href: "https://connect.qq.com/widget/shareqq/index.html?url=", 
-    linkTitle: `來去QQ中分享`,
+    linkTitle: `來去QQ分享`,
     icon: IconQq,
   },
   {

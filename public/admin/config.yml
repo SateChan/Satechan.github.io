@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: satechan/satechan.github.io
+  branch: main
+  client_id: Ov23liS8uCd8MJoVE5xK
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: 文章
+    folder: src/data/blog
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: 標題, name: title, widget: string }
+      - { label: 作者, name: author, widget: string, default: 沙茶ちゃん }
+      - { label: 發佈時間, name: pubDatetime, widget: datetime }
+      - { label: 描述, name: description, widget: string }
+      - { label: 標籤, name: tags, widget: list, default: [] }
+      - { label: 精選, name: featured, widget: boolean, default: false }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 內容, name: body, widget: markdown }
