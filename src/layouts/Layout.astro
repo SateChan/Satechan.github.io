@@ -113,7 +113,6 @@ const structuredData = {
     />
 
     <!-- Enable RSS feed auto-discovery  -->
-    <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -124,9 +123,6 @@ const structuredData = {
     <meta name="theme-color" content="" />
 
     {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
       PUBLIC_GOOGLE_SITE_VERIFICATION && (
         <meta
           name="google-site-verification"
@@ -164,6 +160,20 @@ const structuredData = {
             window.theme.themeValue = val;
           },
         };
+      })();
+    </script>
+
+    <!-- Fix Safari back gesture with View Transitions -->
+    <script is:inline>
+      (function () {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (isSafari) {
+          window.addEventListener("pageshow", function (event) {
+            if (event.persisted) {
+              window.location.reload();
+            }
+          });
+        }
       })();
     </script>
   </head>
