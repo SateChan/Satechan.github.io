@@ -3,6 +3,7 @@ backend:
   repo: satechan/satechan.github.io
   branch: main
   client_id: Ov23liS8uCd8MJoVE5xK
+  base_url: https://sveltia-cms-auth.pages.dev
 
 media_folder: public/images
 public_folder: /images
