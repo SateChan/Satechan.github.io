@@ -6,6 +6,7 @@ import IconArchive from "@/assets/icons/IconArchive.svg";
 import IconSunHigh from "@/assets/icons/IconSunHigh.svg";
 import IconMenuDeep from "@/assets/icons/IconMenuDeep.svg";
 import LinkButton from "./LinkButton.astro";
+import LangToggle from "./LangToggle.astro";
 import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
@@ -119,9 +120,10 @@ const isActive = (path: string) => {
             <span class="sr-only">搜索</span>
           </LinkButton>
         </li>
-        {
-          SITE.lightAndDarkMode && (
-            <li class="col-span-1 flex items-center justify-center">
+        <li class="col-span-1 flex items-center justify-center gap-1">
+          <LangToggle />
+          {
+            SITE.lightAndDarkMode && (
               <button
                 id="theme-btn"
                 class="focus-outline relative size-12 p-4 sm:size-8 hover:[&>svg]:stroke-accent"
@@ -132,9 +134,9 @@ const isActive = (path: string) => {
                 <IconMoon class="absolute top-[50%] left-[50%] -translate-[50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <IconSunHigh class="absolute top-[50%] left-[50%] -translate-[50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
               </button>
-            </li>
-          )
-        }
+            )
+          }
+        </li>
       </ul>
     </nav>
   </div>
