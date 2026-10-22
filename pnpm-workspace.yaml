@@ -1,0 +1,6 @@
+# pnpm 11 起 strictDepBuilds 默认为 true：依赖的构建脚本必须显式允许，
+# 否则 pnpm install 会以 ERR_PNPM_IGNORED_BUILDS 报错退出（exit 1）。
+# 这两个包需要跑 postinstall（astro 构建 / OG 图生成依赖它们）。
+allowBuilds:
+  esbuild: true
+  sharp: true
