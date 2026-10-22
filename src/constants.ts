@@ -56,10 +56,10 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "郵箱",
-    href: "mailto:3467379193@qq.com",
+    href: "mailto:lau.uipin@gmail.com",
     linkTitle: `
     沙茶ちゃん個郵箱
-    3467379193@qq.com`,
+    lau.uipin@gmail.com`,
     icon: IconMail,
   },
 ] as const;
