@@ -10,6 +10,12 @@ featured: true
 draft: false
 ---
 
+# 日常使用
+```
+`yt-dlp --cookies-from-browser chrome -F "bv*+ba/b" -o "~/Downloads/%(title)s.%(ext)s" "URL"`
+```
+
+# 注釋
 - `yt-dlp -U` 更新yt-dlp  
 - `yt-dlp -F "视频链接"` 查詢視頻所有畫質與音頻編號
   - `yt-dlp -F "https://www.bilibili.com/video/BV1fdUYYWEJM"`  
