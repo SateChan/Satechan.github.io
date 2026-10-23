@@ -1,8 +1,8 @@
 ---
-title: "yt-dlp 命令归纳"
+title: "yt-dlp 命令歸納"
 author: "沙茶ちゃん"
 pubDatetime: 2026-10-22
-description: "yt-dlp 命令归纳，留作参考用。"
+description: "yt-dlp 命令歸納，留作参考用。"
 tags:
   - 命令
   - 参考
