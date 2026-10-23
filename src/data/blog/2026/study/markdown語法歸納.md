@@ -1,5 +1,5 @@
 ---
-title: Markdown 語法歸納
+title: Markdown語法歸納
 author: 沙茶ちゃん
 pubDatetime: 2026-04-05
 description: 寫文章個Markdown語法歸納，留作參考用。
@@ -297,5 +297,3 @@ AstroPaper 支持折疊內容：
 | 圖片 | `![描述](路徑)` |
 | 引用 | `> 文字` |
 | 分隔線 | `---` |
-
-只篇留作參考，寫文章個時揣來睇就好 😄
